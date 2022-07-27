@@ -3,11 +3,16 @@
 namespace src\controllers;
 
 use \core\Controller;
+use \src\models\Usuario;
 
 class HomeController extends Controller {
 
     public function index() {
-        $this->render('home', ['nome' => 'Mayara']);
+        $usuarios = Usuario::select()->execute();
+
+        $this->render('home', [
+            'usuarios' => $usuarios
+        ]);
     }
 
     public function sobre() {

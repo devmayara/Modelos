@@ -1,3 +1,5 @@
 <?php $render('header'); ?>
-<hr>
+
 <h4>Sobre</h4>
+
+<?php $render('footer'); ?>

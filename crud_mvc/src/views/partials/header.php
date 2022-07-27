@@ -7,6 +7,7 @@
     <title>CRUD em MVC</title>
 </head>
 <body>
-    <head>
+    <header>
         <h1>Título do Site</h1>
-    </head>
+    </header>
+    <hr>

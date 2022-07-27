@@ -1,3 +1,3 @@
 <?php $render('header'); ?>
 <hr>
-Opa, <?=$nome;?>
+<a href="">Novo Usuário</a>

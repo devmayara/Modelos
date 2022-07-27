@@ -1,5 +1,9 @@
 <?php $render('header'); ?>
 
+<a href="<?= $base; ?>/">[Início]</a>
+
+<hr>
+
 <h2>Adicionar Novo Usuário</h2>
 
 <form action="<?= $base; ?>/novo" method="post">

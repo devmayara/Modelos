@@ -31,10 +31,33 @@ class UsuariosController extends Controller {
     }
 
     public function edit($args) {
+        $usuario = Usuario::select()->find($args['id']);
 
+        $this->render('edit', [
+            'usuario' => $usuario
+        ]);
+    }
+
+    public function editAction($args) {
+        $name = filter_input(INPUT_POST, 'name');
+        $email = filter_input(INPUT_POST, 'email');
+
+        if ($name && $email) {
+            Usuario::update()
+                ->set([
+                    'nome' => $name,
+                    'email' => $email
+                ])
+                ->where('id', $args['id'])
+            ->execute();
+
+            $this->redirect('/');
+        }
+
+        $this->redirect('/usuario/' . $args['id'] . '/editar');
     }
 
     public function delete($args) {
-
+        echo 'Excluindo usuário ' . $args['id'];
     }
 }
